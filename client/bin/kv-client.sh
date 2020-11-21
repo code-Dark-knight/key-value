@@ -1,16 +1,16 @@
 #!/bin/bash
 if [[ $1 == 'get' ]]
 then
-  python3 ../src/get.py $1 $2
+  python ../src/get.py $1 $2
 elif [[ $1 == '--getall' ]]
 then
-  python3 ../src/get.py $1
+  python ../src/get.py $1
 elif [[ $1 == 'set' ]]
 then
-  python3 ../src/set.py $1 $2 $3
+  python ../src/set.py $1 $2 $3
 elif [[ $1 == 'del' ]]
 then
-  python3 ../src/del.py  "rem" $2
+  python ../src/del.py  "rem" $2
 else
-  python3 ../src/client.py -h
+  python ../src/client.py -h
 fi

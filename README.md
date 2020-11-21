@@ -15,6 +15,7 @@ The approach to solve the above problem was to use python flask framework to cre
 
 # Prerequisite
 [Docker](https://docs.docker.com/get-docker/) must be installed and running  
+[Python](https://www.python.org/downloads/) must for running python application
 
 
 #### Directory Structure of Assignment
@@ -82,5 +83,24 @@ Step 5/5 : CMD [ "python", "app.py" ]
 Successfully built 5f0eeeb22cf0
 Successfully tagged kv-server:latest
 e3d8eacc5ab61984e6931eac407708628bb32dc4fe5c38d6c10d3389b858dab3
+
+```
+
+4. Run the same step again `build.sh` file to setup client this time
+:warning: This second step need python to be configure in your machine. As it will find the default python and create virtualenv according to it.
+
+```
+The following script will setup both the CLIENT and SERVER for you
+ --------------------------------------------------------------------------------------------------------
+ 1 . To Setup Server
+ 2 . To Setup Client
+Enter your choice : 2
+
+```
+
+5. After you have Setup both client and server. It's time to run you client and interact with the server
+
+```
+cd client/bin
 
 ```
