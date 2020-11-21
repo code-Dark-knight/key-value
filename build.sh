@@ -44,10 +44,12 @@ then
   if [[ $pyv == 2 ]]
   then
     pip install virtualenv
-    echo "python 2 version found"
+    virtualenv client/vnev
+    source client/vnev/bin/activate
   elif [[ $pyv == 3 ]]
   then
-    echo "python 3 version found"
+    python3 -m venv client/venv
+    source client/venv/bin/activate
   else
     echo "Not able to detect python versions"
   fi
