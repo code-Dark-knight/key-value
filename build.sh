@@ -20,7 +20,6 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 image_name="kv-server:latest"
 container_name="key-value-server"
-
 printf "${YELLOW}The following script will setup both the ${GREEN}CLIENT${NC} ${YELLOW}and${YELLOW} ${GREEN}SERVER${NC} ${YELLOW}for you ${YELLOW} \
 
  ${WHITE}--------------------------------------------------------------------------------------------------------${WHITE} \
@@ -41,7 +40,17 @@ then
 fi
 elif [[ $REPLY == 2 ]]
 then
-  
+  pyv="$(python -c "import sys; print(sys.version_info.major)")"
+  if [[ $pyv == 2 ]]
+  then
+    pip install virtualenv
+    echo "python 2 version found"
+  elif [[ $pyv == 3 ]]
+  then
+    echo "python 3 version found"
+  else
+    echo "Not able to detect python versions"
+  fi
 else
   printf ${CYAN}"Only Numeric Values are allowed and the allowed values are 1 and 2"${CYAN}
 fi
