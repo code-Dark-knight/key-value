@@ -13,7 +13,6 @@ items=[]
 print(config.sections())
 class Datasource(Resource):
     def get(self, data):
-        print(data)
         for item in items:
             if item["key"] == data:
                 return item, 200
@@ -22,9 +21,6 @@ class Datasource(Resource):
 
     def post(self, data):
         data = request.get_json(force=True)
-        print(data.keys())
-        print(data.values())
-        print(data)
         item = {"key":data["key"],"value":data["value"]}
         items.append(item)
         return item , 201
@@ -35,7 +31,7 @@ class Datasource(Resource):
             if items[i]['key'] == data:
                 del items[i]
                 break
-        return str(items)
+        return {"status":"success"}, 200
 
 
 class Alllist(Resource):
