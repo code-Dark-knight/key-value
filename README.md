@@ -21,12 +21,15 @@ The approach to solve the above problem was to use python flask framework to cre
 
 After Cloning the  directory this will look something like this :-
 
-![](https://github.com/YashDevops/Assignment/blob/master/img/tree-Assignment-Dir.png)
+![directory Structure](https://github.com/YashDevops/KV-Store/blob/master/images/direct-structure.png)
 
 
-- All  the modules are under `modules` directory
-- Every `env` | `prod` or `dev` is inside the project directory. Currently prod has the our project `assignment`
-- All the Ansible related code is inside the `Ansible` Directory
-- `Ansible` Directory contains `roles` and `Mediawiki`. Roles are common roles which are used in the project `Mediawiki` and the dynaminc values are passed on to it via folder `group_vars`
-- `keys` are normal which will be used by the `terraform` code to push public key in all the instances lauched to maintain `ssh` accessibility
-- `config` directory contains all the common application that require configuration. Mediawiki is running `nginx` as a web-server and `php-fpm` as downstream server. The nginx-conf is copied from local to private app server from `config` directory
+- utility : It contains all the code for in memory saving key-value data
+- client : It contains all `bin` and `src` where the binary in in `bin` and the client code is in `src`
+- The Root Directory contains the `Dockerfile` for the build and running of `kv-server`
+- build.sh : It as interactive command-line to setup `kv-server` for user
+
+
+# :rocket: Launch
+
+### To get App up and running follow the server follow the following steps
