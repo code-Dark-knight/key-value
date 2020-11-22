@@ -31,23 +31,25 @@ After Cloning the  directory this will look something like this :-
 
 
 - utility : It contains all the code for in memory saving key-value data
-- client : It contains all `bin` and `src` where the binary in in `bin` and the client code is in `src`
-- The Root Directory contains the `Dockerfile` for the build and running of `kv-server`
-- build.sh : It as interactive command-line to setup `kv-server` for user
+- client : It contains `bin` and `src` where the client bash script is in `bin` and the client code is in `src`
+- The Root Directory contains the `Dockerfile` packed for running `kv-server`
+- build.sh : It as interactive command-line to setup `kv-server` abd `kv-client`
 
 
 # :rocket: Launch
 
 ### To get App up and running follow the server follow the following steps
 
-1. Clone the following Repo
+#### 1. Clone the following Repo
 
 ```
 git clone https://github.com/YashDevops/KV-Store.git
 
 cd KV-Store
+
 ```
-2. The simplest way to get `kv-server` up and running is by running command
+
+#### 2. The simplest way to get `kv-server` up and running is by running command
 
 ```
 bash build.sh
@@ -65,7 +67,7 @@ Enter your choice :
 
 ```
 
-3. Choose `1` to `Setup Server` and it will start a docker container with application running on it.
+#### 3. Choose `1` to `Setup Server` and it will start a docker container with application running on it.
 
 Output will be like something :-
 
@@ -91,7 +93,7 @@ e3d8eacc5ab61984e6931eac407708628bb32dc4fe5c38d6c10d3389b858dab3
 
 ```
 
-4. Run the same step again `build.sh` file to setup client this time
+#### 4. Run the same step again `build.sh` file to setup client this time
 
 :warning: This second step need python to be configure in your machine. As it will find the default python and create virtualenv according to it.
 
@@ -108,7 +110,7 @@ This will setup client for you.
 
 
 
-5. Performing Operations
+#### 5. Performing Operations
 
 ####  Setting a Key
 
@@ -139,9 +141,9 @@ This will setup client for you.
 ![get-all key](https://github.com/YashDevops/KV-Store/blob/master/images/getall.png)
 
 
-:exclamation: ERROR
+## :exclamation: ERROR
 
-6. IF there is an issue with setting up client. Try setting it up manual. Below are the steps to setup client manually. The above code has been tested in an fresh EC2 machine at region : ap-south-1 with ami-id : ( ami-00ddb0e5626798373 ) ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026
+#### 6. IF there is an issue with setting up client. Try setting it up manual. Below are the steps to setup client manually. The above code has been tested in an fresh EC2 machine at region : ap-south-1 with ami-id : ( ami-00ddb0e5626798373 ) ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026
 
 ```
 pip install -r client/requirements.txt
