@@ -13,7 +13,6 @@ headers={
 
 def set(params):
     url="http://localhost:8080/subscribe/"+params.subs[1]
-    print(url)
     payload={}
     result=requests.post(url,json=payload,headers=headers)
     data=result.json()

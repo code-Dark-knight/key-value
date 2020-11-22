@@ -24,41 +24,42 @@ class Datasource(Resource):
     def post(self, data):
         if data == "insert":
             body_data = request.get_json(force=True)
-            item = {"key":body_data["key"],"value":body_data["value"]}
-            items.append(item)
-            return item , 201
-        else:
-            return {"message" : "invalid path"}
+            item = next(filter(lambda x: x["key"] == body_data["key"], items ), None)
+            if item is None:
+                item = {"key":body_data["key"],"value":body_data["value"]}
+                items.append(item)
+                return item , 201
+            else:
+                return {"message": "set command can set unique key and values "+body_data["key"]+" already exists"}
+        return {"message" : "invalid path"}
 
 
     def delete(self, data):
         for i in range(len(items)):
             if items[i]['key'] == data:
                 del items[i]
+                if data in subscription_list:
+                    subscription_list.remove(data)
                 break
         return {"status":"success"}, 200
 
     def put(self,data):
-        result = request.get_json()
-        item = next(filter(lambda x: x["key"] == data, items ), None)
+        body_data = request.get_json(force=True)
+        item = next(filter(lambda x: x["key"] == body_data["key"], items ), None)
+        print(item)
+        print(body_data)
         if item is None:
-            item = {"key":result["key"],"value":result["value"]}
-            items.append(item)
-            return item , 201
+            items.append(body_data)
+            return body_data , 201
         else:
-            if item["key"] in subscription_list:
-                print("item in subscription list will add it in version list and update the items list")
-                version_response = {"data" : {uuid.uuid4(): item["value"]}}
-                subscription_version.append(version_response)
-                print(subscription_version)
-                item.update(result)
-                return {"message": data+"in subscription channel has been updated", "oldkey":item["key"],"oldvalue":item["value"],"newkey":result["key"],"newvalue":result["value"]} ,200
-
+            if body_data["key"] in subscription_list:
+                item={"key":body_data["key"],"value":body_data["value"]}
+                oldvalue=item["value"]
+                item.update(body_data)
+                return {"message":"subscription key "+body_data["key"]+" has been updated", "key":body_data["key"],"oldvalue":oldvalue,"newvalue":body_data["value"]}
             else:
-                item.update(result)
-                return result , 200
-
-
+                item.update(body_data)
+                return body_data , 200
 
 class Subscribe(Resource):
     def post(self, data):
