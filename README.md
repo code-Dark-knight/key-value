@@ -18,7 +18,6 @@ The approach to solve the above problem was to use python flask framework to cre
  To get an easy and quick installation of Docker use the following command
 ```
 curl -L get.docker.com | sh
-
 ```
 [Python](https://www.python.org/downloads/) must for running python application
 
@@ -109,7 +108,7 @@ This will setup client for you.
 
 
 
-5.
+5. Performing Operations
 
 ####  Setting a Key
 

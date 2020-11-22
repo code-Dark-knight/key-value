@@ -52,6 +52,21 @@ do
     echo ""
     python ../src/del.py  "rem" ${command_input[1]}
     echo ""
+  elif [[ ${command_input[0]} == 'subs' ]]
+  then
+    echo ""
+    python ../src/subscribe.py ${command_input[0]}  ${command_input[1]}
+    echo ""
+  elif [[ ${command_input[0]} == 'put' ]]
+  then
+    echo ""
+    python ../src/put.py  ${command_input[0]} ${command_input[1]} ${command_input[2]}
+    echo ""
+  elif [[ ${command_input[0]} == 'suball' ]]
+  then
+    echo ""
+    python ../src/suball.py  ${command_input[0]}
+    echo ""
   else
     echo ""
     python ../src/client.py -h
