@@ -17,7 +17,7 @@ def main():
     my_parser.add_argument('put', action='store', nargs=2,type=str,help="Given a key it update and exisitng or will insert a new key|value")
     my_parser.add_argument('subs', action='store', nargs=2,type=str,help="Given a key set subscription on any key")
     my_parser.add_argument('suball', action='store', nargs=2,type=str,help="Given a key will show all the key which have subscription")
-    my_parser.add_argument('-v', '--version', action='version',version='%(prog)s 1.0', help="Show program's version number and exit.")
+    my_parser.add_argument('-v', '--version', action='version',version='%(prog)s 1.0', help="Show program's version number.")
     args = my_parser.parse_args()
     parser.print_help()
 

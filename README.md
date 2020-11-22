@@ -138,9 +138,17 @@ This will setup client for you.
 
 ####  Get all the Key
 
-* To delete a key you can set it the following way
+* To get all a key at a given time
 
 ![get-all key](https://github.com/YashDevops/KV-Store/blob/master/images/getall.png)
+
+
+#### subscribe get for any changes
+
+![sub key](https://github.com/YashDevops/KV-Store/blob/master/images/subs.png)
+
+##### To check subscription on key at any given time you can `suball` to get all the key in subscription is set.
+
 
 
 ## :exclamation: ERROR
