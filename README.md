@@ -1,7 +1,7 @@
 # KV (key-value) Service
 
 # Problem Statement
-The problem statement was to build a simple KV (key-value) store web service with a subscription feature. As a user, I should be able to perform set(key, val) and get(key)  operations over HTTP and also subscribe to changes happening to any of the key
+The problem statement was to build a simple KV (key-value) store web service with a subscription feature. As a user, I should be able to perform set(key, val) and get(key)  operations over HTTP and also subscribe to changes happening to any of the key.
 
 # Approach
 
@@ -37,6 +37,7 @@ After Cloning the  directory this will look something like this :-
 
 
 # :rocket: Launch
+
 
 ### To get App up and running follow the server follow the following steps
 
@@ -109,8 +110,9 @@ Enter your choice : 2
 This will setup client for you.
 
 
+#### 5. check help `-h` or `--help`
 
-#### 5. Performing Operations
+#### 6. Performing Operations
 
 ####  Setting a Key
 
@@ -143,7 +145,7 @@ This will setup client for you.
 
 ## :exclamation: ERROR
 
-#### 6. IF there is an issue with setting up client. Try setting it up manual. Below are the steps to setup client manually. The above code has been tested in an fresh EC2 machine at region : ap-south-1 with ami-id : ( ami-00ddb0e5626798373 ) ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026
+#### 7. IF there is an issue with setting up client. Try setting it up manual. Below are the steps to setup client manually. The above code has been tested in an fresh EC2 machine at region : ap-south-1 with ami-id : ( ami-00ddb0e5626798373 ) ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026
 
 ```
 pip install -r client/requirements.txt
