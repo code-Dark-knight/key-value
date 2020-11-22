@@ -111,12 +111,33 @@ This will setup client for you.
 
 5.
 
-#### * To Set a key
+####  Setting a Key
 
- 
+* To Set a key you can set it the following way
+
+![set key](https://github.com/YashDevops/KV-Store/blob/master/images/set.png)
 
 
 
+####  Getting a Key
+
+* To get a key you can set it the following way
+
+![get key](https://github.com/YashDevops/KV-Store/blob/master/images/get.png)
+
+
+####  Deleting a Key
+
+* To delete a key you can set it the following way
+
+![delete key](https://github.com/YashDevops/KV-Store/blob/master/images/del.png)
+
+
+####  Get all the Key
+
+* To delete a key you can set it the following way
+
+![get-all key](https://github.com/YashDevops/KV-Store/blob/master/images/getall.png)
 
 
 :exclamation: ERROR
