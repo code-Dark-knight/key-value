@@ -15,8 +15,14 @@ The approach to solve the above problem was to use python flask framework to cre
 
 # Prerequisite
 [Docker](https://docs.docker.com/get-docker/) must be installed and running  
+ To get an easy and quick installation of Docker use the following command
+```
+curl -L get.docker.com | sh
+
+```
 [Python](https://www.python.org/downloads/) must for running python application
 
+[Pip](https://pip.pypa.io/en/stable/installing/) for downloading required packages
 
 #### Directory Structure of Assignment
 
@@ -87,6 +93,7 @@ e3d8eacc5ab61984e6931eac407708628bb32dc4fe5c38d6c10d3389b858dab3
 ```
 
 4. Run the same step again `build.sh` file to setup client this time
+
 :warning: This second step need python to be configure in your machine. As it will find the default python and create virtualenv according to it.
 
 ```
@@ -98,9 +105,16 @@ Enter your choice : 2
 
 ```
 
-5. After you have Setup both client and server. It's time to run you client and interact with the server
+This will setup client for you.
+
+:exclamation: ERROR
+
+5. IF there is an issue with setting up client. Try setting it up manual. Below are the steps to setup client manually. The above code has been tested in an fresh EC2 machine at region : ap-south-1 with ami-id : ( ami-00ddb0e5626798373 ) ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026
 
 ```
-cd client/bin
+cd client
 
+pip install -r requirements.txt
+
+bash ./bin/kv-client.sh
 ```

@@ -46,10 +46,16 @@ then
     pip install virtualenv
     virtualenv client/vnev
     source client/vnev/bin/activate
+    pip install -r client/requirements.txt
+    cd client/bin/
+    bash kv-client.sh
   elif [[ $pyv == 3 ]]
   then
     python3 -m venv client/venv
     source client/venv/bin/activate
+    pip install -r client/requirements.txt
+    cd client/bin/
+    bash kv-client.sh
   else
     echo "Not able to detect python versions"
   fi
