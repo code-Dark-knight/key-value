@@ -12,6 +12,22 @@ The approach to solve the above problem was to use python flask framework to cre
 * python
 * shell
 
+# Usage
+
+* set {key} {value} : It will set key-value in {"key": {key} , "value": {value}}. set command only sets unique keys. If you try set an already present key it will return you a message : `{'message': 'set command can set unique key and values yash already exists'}`
+
+* get {key} : It will fetches the value of the given key.
+
+* del {key} : It will delete the {key} | {value} pair. Any {key} that has been subscribed and delete will also be removed from the subscription list if not updated.
+
+* getall : It will return all the {key} {value} pair at any point of time in KV-Store memory.
+
+* suball : It will return a list of all the key which has been subscribed. These key will response to any changes done via put.
+
+* put {key} {value} : It's an update command. If there is no key in the memory in the KV-store it will add the {key}-{value} pair. If there is any {key} present it will update that. If any key is under subscription-list and get update via put command it will return a message : `{'message': 'subscription key yash has been updated', 'key': 'yash', 'oldvalue': 'shah', 'newvalue': 'kumar'}`
+
+* subs {key} : It will set the key in subscription list any changes done to that {key} via put will response to changes.
+
 
 # Prerequisite
 [Docker](https://docs.docker.com/get-docker/) must be installed and running  
@@ -47,7 +63,6 @@ After Cloning the  directory this will look something like this :-
 git clone https://github.com/YashDevops/KV-Store.git
 
 cd KV-Store
-
 ```
 
 #### 2. The simplest way to get `kv-server` up and running is by running command
@@ -65,7 +80,6 @@ The following script will setup both the CLIENT and SERVER for you
  1 . To Setup Server
  2 . To Setup Client
 Enter your choice :
-
 ```
 
 #### 3. Choose `1` to `Setup Server` and it will start a docker container with application running on it.
@@ -91,7 +105,6 @@ Step 5/5 : CMD [ "python", "app.py" ]
 Successfully built 5f0eeeb22cf0
 Successfully tagged kv-server:latest
 e3d8eacc5ab61984e6931eac407708628bb32dc4fe5c38d6c10d3389b858dab3
-
 ```
 
 #### 4. Run the same step again `build.sh` file to setup client this time
@@ -104,13 +117,15 @@ The following script will setup both the CLIENT and SERVER for you
  1 . To Setup Server
  2 . To Setup Client
 Enter your choice : 2
-
 ```
 
 This will setup client for you.
 
 
 #### 5. check help `-h` or `--help`
+
+![help key](https://github.com/YashDevops/KV-Store/blob/master/images/help.png)
+
 
 #### 6. Performing Operations
 
@@ -143,7 +158,7 @@ This will setup client for you.
 ![get-all key](https://github.com/YashDevops/KV-Store/blob/master/images/getall.png)
 
 
-#### subscribe get for any changes
+#### Subscribe get for any changes
 
 ![sub key](https://github.com/YashDevops/KV-Store/blob/master/images/subs.png)
 
