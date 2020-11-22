@@ -53,7 +53,6 @@ class Datasource(Resource):
             return body_data , 201
         else:
             if body_data["key"] in subscription_list:
-                item={"key":body_data["key"],"value":body_data["value"]}
                 oldvalue=item["value"]
                 item.update(body_data)
                 return {"message":"subscription key "+body_data["key"]+" has been updated", "key":body_data["key"],"oldvalue":oldvalue,"newvalue":body_data["value"]}
