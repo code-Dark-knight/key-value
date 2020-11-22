@@ -7,6 +7,7 @@ import requests
 url="http://localhost:8080/alllist"
 def getall():
     result=requests.get(url)
+    print(result.json())
 
 
 def main():

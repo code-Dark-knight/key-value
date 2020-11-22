@@ -107,14 +107,24 @@ Enter your choice : 2
 
 This will setup client for you.
 
+
+
+5.
+
+#### * To Set a key
+
+ 
+
+
+
+
+
 :exclamation: ERROR
 
-5. IF there is an issue with setting up client. Try setting it up manual. Below are the steps to setup client manually. The above code has been tested in an fresh EC2 machine at region : ap-south-1 with ami-id : ( ami-00ddb0e5626798373 ) ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026
+6. IF there is an issue with setting up client. Try setting it up manual. Below are the steps to setup client manually. The above code has been tested in an fresh EC2 machine at region : ap-south-1 with ami-id : ( ami-00ddb0e5626798373 ) ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20201026
 
 ```
-cd client
-
-pip install -r requirements.txt
-
-bash ./bin/kv-client.sh
+pip install -r client/requirements.txt
+cd client/bin/
+bash kv-client.sh
 ```
