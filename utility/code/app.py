@@ -55,6 +55,7 @@ class Datasource(Resource):
             if body_data["key"] in subscription_list:
                 oldvalue=item["value"]
                 item.update(body_data)
+                subscription_list.remove(body_data["key"])
                 return {"message":"subscription key "+body_data["key"]+" has been updated", "key":body_data["key"],"oldvalue":oldvalue,"newvalue":body_data["value"]}
             else:
                 item.update(body_data)

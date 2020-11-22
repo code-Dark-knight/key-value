@@ -67,6 +67,10 @@ do
     echo ""
     python ../src/suball.py  ${command_input[0]}
     echo ""
+  elif [[ ${command_input[0]} == '-v' ]] || [[ ${command_input[0]} == '--version' ]]
+  then
+    echo ""
+    python ../src/client.py ${command_input[0]}
   else
     echo ""
     python ../src/client.py -h
