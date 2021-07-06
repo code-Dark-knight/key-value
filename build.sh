@@ -52,7 +52,7 @@ then
   elif [[ $pyv == 3 ]]
   then
     python3 -m venv client/venv
-    source client/venv/bin/activate
+    #source client/venv/bin/activate
     pip install -r client/requirements.txt
     cd client/bin/
     bash kv-client.sh
