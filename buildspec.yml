@@ -2,7 +2,8 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - TAG=$(aws codepipeline get-pipeline-state --name keyvalue | grep -i pipelineExecutionId | awk '{print $2}' | tr -d \",- | head -n 1)
+      #- TAG=$(aws codepipeline get-pipeline-state --name keyvalue | grep -i pipelineExecutionId | awk '{print $2}' | tr -d \",- | head -n 1)
+      - TAG=latest
       - IMAGE_URI=601504529245.dkr.ecr.ap-south-1.amazonaws.com/keyvalue
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 601504529245.dkr.ecr.ap-south-1.amazonaws.com/keyvalue
   build:
